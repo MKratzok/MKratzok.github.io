@@ -1,0 +1,38 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, section, footer {
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: #2ecc71; /* Green color */
+}
+
+audio-stream, recent-playlists, past-interviews, upcoming-shows, contact-info {
+    border-bottom: 2px solid #3498db; /* Blue color */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: #e74c3c; /* Red color */
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    color: #7f8c8d; /* Gray color */
+}
