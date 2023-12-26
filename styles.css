@@ -12,8 +12,18 @@ header {
     text-align: center;
 }
 
+@font-face {
+  font-family: "Cooper Black";
+  src: url("/cooper-black.otf");
+}
+
 h1 {
     color: #2ecc71; /* Green color */
+    font-family: "Cooper Black", serif;
+}
+
+h3 { 
+    font-family: "Cooper Black", serif;
 }
 
 audio-stream, recent-playlists, past-interviews, upcoming-shows, contact-info {
