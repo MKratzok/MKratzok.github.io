@@ -20,10 +20,13 @@ header {
 h1 {
     color: #2ecc71; /* Green color */
     font-family: "Cooper Black", serif;
+    margin-bottom: 5px;
 }
 
 h3 { 
     font-family: "Cooper Black", serif;
+    letter-spacing: -1px;
+    font-style: italic;
 }
 
 audio-stream, recent-playlists, past-interviews, upcoming-shows, contact-info {
