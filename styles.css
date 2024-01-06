@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Avant Garde', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -17,6 +17,21 @@ header {
   src: url("../MKratzok.github.io/Cooper Black Regular.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: "Cooper";
+    src: url("../MKratzok.github.io/Cooper Old Style BQ Regular.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "Avant Garde";
+    src: url("../MKratzok.github.io/ITC Avant Garde Gothic Std Book.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "Consola";
+    src: url("../MKratzok.github.io/CONSOLA.ttf") format('truetype');
+}
+
 h1 {
     color: #2ecc71; /* Green color */
     font-family: "Cooper Black", serif;
@@ -24,10 +39,24 @@ h1 {
     letter-spacing: -1px;
 }
 
+h2 {
+    font-family: "Cooper", serif;
+    font-weight: lighter;
+    animation: italicize 1.0 infinite;
+}
+
+
 h3 { 
     font-family: "Cooper Black", serif;
     letter-spacing: -1px;
     font-style: italic;
+}
+
+mh {
+    font-family: "Avant Garde", sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+
 }
 
 audio-stream, recent-playlists, past-interviews, upcoming-shows, contact-info {
@@ -38,7 +67,11 @@ audio-stream, recent-playlists, past-interviews, upcoming-shows, contact-info {
 
 ul {
     list-style: none;
-    padding: 0;
+    padding: 1;
+}
+
+ol {
+    padding: 1;
 }
 
 a {
@@ -50,3 +83,185 @@ footer {
     text-align: center;
     color: #7f8c8d; /* Gray color */
 }
+
+
+ascii {
+    font-family: 'Consola';
+    line-height: 0px;
+    white-space:pre;
+}
+
+pre {
+    line-height: 0px;
+}
+
+.bounds {
+  background-attachment: 
+  extalign: center;
+  border: 0px red solid;
+  width: 98%;
+  height: 400px;
+  display: grid;
+}
+
+.bounds > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+
+@keyframes hor-movement {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: 80%;
+  }
+}
+
+@keyframes ver-movement {
+  from {
+    margin-top: 0px;
+  }
+  to {
+    margin-top: 400px;
+  }
+}
+
+@keyframes start-movement {
+    from {
+        margin-top: -100%;
+    }
+    to {
+        margin-top:0%;
+    }
+}
+
+img.image {
+  /*text-align: center;*/
+    z-index: 0; 
+  animation-name: hor-movement, ver-movement;
+  animation-duration: 16.141s, 19.414s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+img.image.hor-movement:hover {
+    animation:none;
+}
+
+
+img.image.ver-movement:hover {
+    animation:none;
+}
+
+mh {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    white-space: pre;
+    font-size:10%;
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    white-space: pre;
+    font-size: 500%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+/*.airplane {
+    height: 400px;
+    z-index: 1; 
+
+    animation-duration: 6s;
+    animation-delay: 2.75s;
+    animation-iteration-count:infinite;
+    /*position: relative;*/
+    animation-name: appear, flyoff;
+}*/
+
+@keyframes appear {
+    from {
+        z-index:1;
+    }
+    to {
+        z-index: -1;
+    }
+}
+
+@keyframes flyoff {
+    from {
+        margin-left: 0%;
+    z-index: 1; 
+
+    }
+
+    10% {
+        margin-left: -5%;
+    }
+
+    to {
+        margin-left: 200%
+    z-index: -1; 
+
+    }
+}
+
+.inline-block {
+   display: inline-block;
+   max-width: 45%;
+   margin: 0;
+}
+
+#banner {
+    text-align: center;
+
+
+    display: block;
+}
+
+h2.italicize:hover {
+    animation: none;
+}
+
+h2{
+        animation: italicize 1.0s infinite;
+}
+
+
+@keyframes italicize {
+    0% { font-style: normal; }
+    45% { font-style: italic; }
+    55% { font-style: normal; }
+
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   40% { transform: rotate(0deg); }
+   45% { transform: rotate(5deg); }
+   50% { transform: rotate(-5deg); }
+   55% { transform: rotate(0deg); }
+   60% { transform: rotate(0deg); }
+   65% { transform: rotate(2.5deg); }
+   70% { transform: rotate(-2.5deg); }
+   75% { transform: rotate(0deg); }
+}
+
+h1.wiggle {
+  display: inline-block;
+  animation: wiggle 3.0s infinite;
+}
+
