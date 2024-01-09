@@ -32,6 +32,11 @@ header {
     src: url("../MKratzok.github.io/CONSOLA.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: "Comic Sans MS";
+    src: url("../MKratzok.github.io/Comic Sans MS.ttf") format('truetype');
+}
+
 h1 {
     color: #2ecc71; /* Green color */
     font-family: "Cooper Black", serif;
