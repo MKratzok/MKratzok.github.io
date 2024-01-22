@@ -37,11 +37,28 @@ header {
     src: url("../MKratzok.github.io/Comic Sans MS.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: "Harry Fat";
+    src: url("../MKratzok.github.io/harry-fat.otf") format('opentype');
+}
+
+@font-face {
+    font-family: "ITC Zipper";
+    src: url("https://db.onlinewebfonts.com/t/7cd12d722c35d3a4ee211fe493a74950.eot");
+    src: url("https://db.onlinewebfonts.com/t/7cd12d722c35d3a4ee211fe493a74950.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/7cd12d722c35d3a4ee211fe493a74950.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7cd12d722c35d3a4ee211fe493a74950.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/7cd12d722c35d3a4ee211fe493a74950.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/7cd12d722c35d3a4ee211fe493a74950.svg#ITC Zipper W02")format("svg");
+}
+
 h1 {
     color: #2ecc71; /* Green color */
-    font-family: "Cooper Black", serif;
+    font-family: "Harry Fat", serif;
+    font-variant: small-caps;
+    font-size: 60px;
     margin-bottom: -10px;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
 }
 
 h2 {
@@ -59,7 +76,8 @@ h3 {
 
 mh {
     font-family: "Avant Garde", sans-serif;
-    font-weight: normal;
+    font-weight: lighter;
+    letter-spacing: 3px;
     font-size: 300%;
 
 }
@@ -86,6 +104,9 @@ a {
 
 footer {
     text-align: center;
+    font-family: "ITC Zipper";
+    letter-spacing: 0.5px;
+    font-size: 18px;
     color: #7f8c8d; /* Gray color */
 }
 
