@@ -103,10 +103,6 @@ a {
 }
 
 footer {
-
-}
-
-.p {
     text-align: center;
     font-family: "ITC Zipper";
     letter-spacing: 0.5px;
@@ -119,10 +115,12 @@ ascii {
     font-family: 'Consola';
     line-height: 0px;
     white-space:pre;
+    letter-spacing: 0px;
 }
 
 pre {
     line-height: 0px;
+    letter-spacing: 0px;
 }
 
 .bounds {
