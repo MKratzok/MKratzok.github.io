@@ -120,7 +120,7 @@ ascii {
 
 pre {
     line-height: 0px;
-    letter-spacing: 0px;
+    letter-spacing: -2px;
 }
 
 .bounds {
@@ -317,4 +317,38 @@ h1.wiggle {
 
 .dramatic-bounce-button:hover {
   animation: dramaticBounce 1s infinite;
+}
+
+
+h2 {
+    color: #333;
+}
+.blog-post {
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+.post-title {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+.post-meta {
+    color: #777;
+}
+.post-content {
+    color: #444;
+    margin-left: 5%;
+    margin-right: 25%;
+}
+
+.sidenav {
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 16.75%;
+  right: 0;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #3cd7e7;
 }
