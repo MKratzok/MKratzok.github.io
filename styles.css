@@ -52,6 +52,11 @@ header {
     url("https://db.onlinewebfonts.com/t/7cd12d722c35d3a4ee211fe493a74950.svg#ITC Zipper W02")format("svg");
 }
 
+@font-face {
+    font-family: "Gemini";
+    src: url("../MKratzok.github.io/BD Gemini.otf) format('opentype');
+}
+
 h1 {
     color: #2ecc71; /* Green color */
     font-family: "Harry Fat", serif;
@@ -72,6 +77,12 @@ h3 {
     font-family: "Cooper Black", serif;
     letter-spacing: -1px;
     font-style: italic;
+}
+
+h4 {
+    font-family: "Gemini";
+    font-size: 150%;
+    color: black;
 }
 
 mh {
