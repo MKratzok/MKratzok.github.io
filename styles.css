@@ -77,12 +77,19 @@ h3 {
     font-family: "Cooper Black", serif;
     letter-spacing: -1px;
     font-style: italic;
+    margin-top: 10px;
+    font-size: 125%;
+
 }
 
 h4 {
     font-family: "Gemini";
-    font-size: 150%;
+    font-size: 200%;
     color: black;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+
 }
 
 mh {
@@ -362,4 +369,58 @@ h2 {
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #3cd7e7;
+}
+
+
+.showinfo {
+
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px;
+
+}
+
+.showinfo .trigger {
+    background-color:#FFFFFF;
+    border-bottom:2.5px solid;
+    border-bottom-style: inset;
+}
+
+.showinfo .text {
+    visibility: hidden;
+    width: 150%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: -25%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 16px;
+}
+
+.showinfo:hover .trigger {
+  border-bottom-style: outset;
+}
+
+.showinfo:hover .text {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.showinfo:hover .text::after {
+    content: "";
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
 }
