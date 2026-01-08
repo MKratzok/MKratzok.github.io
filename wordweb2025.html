@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content ="Highly Recommended Word Web">
+    <meta name="author" content="Max Kratzok">
+    <title>Music Word Cloud</title>
+    <link rel="icon" href="Website favicon - 48px.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="Website favicon - 48px.ico" type="image/x-icon">
+    <style>
+        html, body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0px;
+            padding: 0;
+            overflow-x: scroll;
+            /*overflow-y: hidden;*/
+            height: 100%;
+            background: white;
+
+        }
+
+        .wordweb {
+          position: relative;
+          min-width: 100vw;        /* starting width */
+          height: 95vh;        /* full screen height */
+          background: white;
+          /*overflow-x: scroll;    horizontal scrolling only */
+          /*overflow-y: hidden;    no vertical scroll */
+          /*background: #fafafa;*/
+          /*overflow: auto*/
+        }
+
+
+        .artist {
+          position: absolute;
+          font-family: "Cooper";
+          white-space: nowrap;
+          line-height: 1;
+          /*padding: 1px 2px;*/
+          user-select: none;
+        }
+
+        .local {
+            /*text-decoration: underline;*/
+            color: rgb(97 143 255);
+        }
+
+        .new {
+            /*font-style: italic;*/
+        }
+
+        .live {
+            /*font-weight: bold;*/
+        }
+
+        .wordweb-wrapper {
+          width: 100vw;
+          height: 95vh;
+          overflow: scroll;      /* THIS is the scrollable area */
+          position: relative;
+          background: #fafafa;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="wordweb" id="wordweb"></div>
+
+<button id="save">Save as PNG</button>
+
+
+<script>
+let container;
+let W;
+let H;
+let artists;
+const CELL = 6;
+const MAX_TRIES = 400;
+
+
+function layout() {
+    W = container.scrollWidth;
+    H = container.clientHeight;
+
+    // reset per-artist state
+    artists.forEach(el => {
+        el._x = null;
+        el._y = null;
+        el._failed = false;
+    });
+
+
+    /* Occupancy grid */
+    const cols = Math.ceil(W / CELL);
+    const rows = Math.ceil(H / CELL);
+    const grid = new Uint8Array(cols * rows);
+
+    const mark = (x, y, w, h) => {
+        const x0 = Math.floor(x / CELL);
+        const y0 = Math.floor(y / CELL);
+        const x1 = Math.ceil((x + w) / CELL);
+        const y1 = Math.ceil((y + h) / CELL);
+
+        for (let yy = y0; yy < y1; yy++)
+            for (let xx = x0; xx < x1; xx++)
+                grid[yy * cols + xx] = 1;
+    };
+
+    const free = (x, y, w, h) => {
+        if (x < 0 || y < 0 || x + w > W || y + h > H) return false;
+
+        const x0 = Math.floor(x / CELL);
+        const y0 = Math.floor(y / CELL);
+        const x1 = Math.ceil((x + w) / CELL);
+        const y1 = Math.ceil((y + h) / CELL);
+
+        for (let yy = y0; yy < y1; yy++)
+            for (let xx = x0; xx < x1; xx++)
+                if (grid[yy * cols + xx]) return false;
+
+        return true;
+    };
+
+    /* Alphabetical ordering preserved by index */
+    const sorted = artists.slice(); // keep original order
+    const N = sorted.length;
+
+    sorted.forEach((el, i) => {
+        const r = el.getBoundingClientRect();
+
+        // alphabetical target Y
+        const targetY = (i / (N - 1)) * H;
+
+        let placed = false;
+
+        // spiral radius grows each attempt
+        for (let t = 0; t < MAX_TRIES && !placed; t++) {
+            const radius = t * 3; // grows slowly
+            const angle = Math.random() * Math.PI * 2;
+
+            const x = (W / 2) + Math.cos(angle) * radius - r.width / 2;
+            const y = targetY + Math.sin(angle) * radius - r.height / 2;
+
+            if (free(x, y, r.width, r.height)) {
+                mark(x, y, r.width, r.height);
+                el._x = x;
+                el._y = y;
+                placed = true;
+            }
+        }
+
+        if (!placed) {
+            // fallback: drop anywhere free
+            for (let t = 0; t < MAX_TRIES && !placed; t++) {
+                const x = Math.random() * (W - r.width);
+                const y = Math.random() * (H - r.height);
+
+                if (free(x, y, r.width, r.height)) {
+                    mark(x, y, r.width, r.height);
+                    el._x = x;
+                    el._y = y;
+                    placed = true;
+                }
+            }
+        }
+    });
+
+
+    /* Final paint */
+    artists.forEach(el => {
+        if (el._x != null) {
+            el.style.transform = `translate(${el._x}px, ${el._y}px)`;
+        } else {
+                // failed placements go offscreen so they don't interfere with overlap check
+                el.style.transform = `translate(-9999px, -9999px)`;
+        }
+    });
+
+}
+
+async function runLayoutWithRetries(maxAttempts = 20) {
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        layout();
+
+        // allow browser to apply transforms and paint
+        await new Promise(r => requestAnimationFrame(() => r()));
+        await new Promise(r => requestAnimationFrame(() => r()));
+
+        if (!hasOverlap(artists)) {
+            console.log("Layout succeeded on attempt", attempt);
+            return true; 
+        }
+
+        console.log("Overlap detected, retrying…", attempt);
+    }
+    console.warn("Failed to find non-overlapping layout");
+    return false;
+}
+
+async function autoLayout() {
+    let width = container.clientWidth;
+    let height = container.clientHeight;
+
+    for (let tries = 0; tries < 15; tries++) {
+        container.style.width = width + "px";
+        container.style.height = height + "px";
+
+        const ok = await runLayoutWithRetries(15);
+        if (ok) return;
+
+        // expand canvas and try again
+        width *= 1.2;
+        // height *= 1.2;
+        console.log("Expanding canvas to", width, height);
+    }
+
+    console.error("Could not find a valid layout");
+}
+
+function hasOverlap(artists) {
+  const shrink = 2; // px to shrink each side
+
+  const rects = artists.map(el => {
+    const r = el.getBoundingClientRect();
+    return {
+      left: r.left + shrink,
+      right: r.right - shrink,
+      top: r.top + shrink,
+      bottom: r.bottom - shrink
+    };
+  });
+
+  for (let i = 0; i < rects.length; i++) {
+    const a = rects[i];
+    for (let j = i + 1; j < rects.length; j++) {
+      const b = rects[j];
+
+      if (
+        a.left < b.right &&
+        a.right > b.left &&
+        a.top < b.bottom &&
+        a.bottom > b.top
+      ) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+fetch("wordwebvalues2025_2.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("wordweb").innerHTML = html;
+
+    container = document.querySelector('.wordweb');
+    artists = [...document.querySelectorAll('.artist')];
+
+    // Apply font sizes and absolute positioning BEFORE measuring
+    artists.forEach(el => {
+        const w = +el.dataset.weight || 1;
+        el.style.fontSize = `${15 + w*3}px`;
+        el.style.position = "absolute";
+        el.style.left = "0px";
+        el.style.top = "0px";
+    });
+
+    // Force layout flush so sizes are correct
+    container.offsetHeight;
+
+    autoLayout();
+    window.addEventListener('resize', () => {
+        autoLayout();
+    });
+});
+
+document.getElementById("save").addEventListener("click", () => {
+  html2canvas(document.getElementById("wordweb"), {
+    backgroundColor: null   // makes PNG transparent
+  }).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "wordweb.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
+});
+
+
+</script>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+</body>
+
+</html>

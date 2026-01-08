@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>RSS Image Board</title>
+  <title>Mellow Max Image Board</title>
   <style>
     body {
       font-family: sans-serif;
@@ -48,25 +48,777 @@
   </style>
 </head>
 <body>
-  <h1>RSS Image Board</h1>
+  <h1>Highly Recommended — Image Board</h1>
   <div class="board" id="board"></div>
 
-  <script>
-    async function loadLocalFeed() {
-      // point to your local JSON file (placed in the same folder as this HTML file)
-      const response = await fetch("feed.json");
-      const data = await response.json();
+<<!-- Use this to generate JSON https://onlineminitools.com/rss-to-json-converter -->
+
+<script id="feed-data" type="application/json">
+  {
+  "title": "Highly Recommended with Mellow Max",
+  "description": "Hi! I'm a radio host at 91.5FM WMFO in Medford, MA. I'll be posting interviews and other audio tidbits here for you to enjoy. Tune in to my show, Highly Recommended, to catch all this, and more, live!\n\nAll of the released music has been cut out of the podcasts to avoid copyright issues.\n\nFor more info: https://mellowmaxradio.com/",
+  "link": "https://mellowmaxradio.com",
+  "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/40301574/40301574-1705380065533-4f1667a9ed6e6.jpg",
+  "category": [],
+  "items": [
+    {
+      "id": "37d7c4a4-fe6c-43b5-b607-a7a6bfc85c38",
+      "title": "Bradey Dallas Jones — Sep. 11, 2024 (Acoustic Set)",
+      "description": "<p>Check out this interview / acoustic set with <a href=\"https://linktr.ee/bradydallasjones\" target=\"_blank\" rel=\"noopener noreferer\">Brady Dallas Jones </a>the week before the release of his debut EP <a href=\"https://open.spotify.com/album/6M6iCHZb2QQJnFbJMqgW85\" target=\"_blank\" rel=\"noopener noreferer\">Love is Overflowing</a>. </p><p><br></p><p>Set List:</p><ul><li>00:00 — Intro</li><li>05:37 — Peace</li><li>13:33 — A Painter&#39;s Hand</li><li>23:55 — Oh, Alina!</li><li>40:13 — Windmills</li><li>47:02 — Love is Overflowing</li></ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Bradey-Dallas-Jones--Sep--11--2024-Acoustic-Set-e36vevu",
+      "author": "Mellow Max",
+      "published": 1755864000000,
+      "created": 1755864000000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/106985918/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-7-17%2F405817897-44100-2-0376c470a3b94.m4a",
+          "length": "51234708",
+          "type": "audio/x-m4a"
+        }
+      ],
+      "itunes_summary": "<p>Check out this interview / acoustic set with <a href=\"https://linktr.ee/bradydallasjones\" target=\"_blank\" rel=\"noopener noreferer\">Brady Dallas Jones </a>the week before the release of his debut EP <a href=\"https://open.spotify.com/album/6M6iCHZb2QQJnFbJMqgW85\" target=\"_blank\" rel=\"noopener noreferer\">Love is Overflowing</a>. </p><p><br></p><p>Set List:</p><ul><li>00:00 — Intro</li><li>05:37 — Peace</li><li>13:33 — A Painter&#39;s Hand</li><li>23:55 — Oh, Alina!</li><li>40:13 — Windmills</li><li>47:02 — Love is Overflowing</li></ul>",
+      "itunes_duration": "00:52:47",
+      "itunes_season": 1,
+      "itunes_episode": 44,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1755466576416-06ca23b4e6cee.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "338e6f99-1d7b-4472-8f90-fa29067d9ba3",
+      "title": "Hound and Handler — Sep. 04, 2024 (Acoustic Set)",
+      "description": "<p>Enjoy this acoustic set and interview with <a href=\"https://linktr.ee/hound.n.handler\" target=\"_blank\" rel=\"noopener noreferer\">Hound and Handler</a> from the end of last summer! Catch them playing bluegrass and folk around the Boston area. </p><p>Set List:</p><ul><li>00:00 — Intro</li><li>00:43 — Beans at Midnight</li><li>02:30 — Just Another Song</li><li>09:52 — Mountain Dew</li><li>17:15 — Spacing</li><li>28:51 — Must Be in a Good Place Now</li><li>40:19 — Good Golly Me, Look At This Fresh Stack of Money</li><li>50:52 — She Caught the Katy</li></ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Hound-and-Handler--Sep--04--2024-Acoustic-Set-e36v9k1",
+      "author": "Mellow Max",
+      "published": 1755604800000,
+      "created": 1755604800000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/106980417/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-7-17%2F405816799-44100-2-d03d3e3b7a204.m4a",
+          "length": "52267027",
+          "type": "audio/x-m4a"
+        }
+      ],
+      "itunes_summary": "<p>Enjoy this acoustic set and interview with <a href=\"https://linktr.ee/hound.n.handler\" target=\"_blank\" rel=\"noopener noreferer\">Hound and Handler</a> from the end of last summer! Catch them playing bluegrass and folk around the Boston area. </p><p>Set List:</p><ul><li>00:00 — Intro</li><li>00:43 — Beans at Midnight</li><li>02:30 — Just Another Song</li><li>09:52 — Mountain Dew</li><li>17:15 — Spacing</li><li>28:51 — Must Be in a Good Place Now</li><li>40:19 — Good Golly Me, Look At This Fresh Stack of Money</li><li>50:52 — She Caught the Katy</li></ul>",
+      "itunes_duration": "00:53:51",
+      "itunes_season": 1,
+      "itunes_episode": 43,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1755464802778-b0121e79d6952.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "a59da9b9-665f-4fd1-841a-ec85bc514da1",
+      "title": "Alester — Sep. 04, 2024",
+      "description": "<p>Hear from <a href=\"https://linktr.ee/alester.png\" target=\"_blank\" rel=\"noopener noreferer\">Alester</a> mere hours before the release of his EP, <a href=\"https://open.spotify.com/album/3ntOayqa4xCXu94ywgYdcz\" target=\"_blank\" rel=\"noopener noreferer\">How to Build a Bomb</a>! </p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Alester--Sep--04--2024-e36v7eh",
+      "author": "Mellow Max",
+      "published": 1755451324000,
+      "created": 1755451324000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/106978193/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-7-17%2F405807271-44100-2-f5c32c4f0d8c7.m4a",
+          "length": "16172686",
+          "type": "audio/x-m4a"
+        }
+      ],
+      "itunes_summary": "<p>Hear from <a href=\"https://linktr.ee/alester.png\" target=\"_blank\" rel=\"noopener noreferer\">Alester</a> mere hours before the release of his EP, <a href=\"https://open.spotify.com/album/3ntOayqa4xCXu94ywgYdcz\" target=\"_blank\" rel=\"noopener noreferer\">How to Build a Bomb</a>! </p>",
+      "itunes_duration": "00:16:39",
+      "itunes_season": 1,
+      "itunes_episode": 42,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1755450746410-537068bbf952d.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "b6271c61-cfd4-49a4-be7a-20d2199791b1",
+      "title": "Dalton Moon — Aug. 28, 2024 (Acoustic Set)",
+      "description": "<p>Check out this interview with and acoustic performance by the one, the only: <a href=\"https://daltonmoon.bandcamp.com/\" target=\"_blank\" rel=\"noopener noreferer\">Dalton Moon</a>! This Worcester-based band, named for their lead singer (and two-time guest on Highly Recommended!), plays rock &#39;n roll. Hear some of your favorite Dalton Moon song stripped back to acoustic tracks and recorded live on the air mixed in with some generally silly chats. </p><p>Set List:</p><ul><li>00:00 — Intro</li><li>02:16 — Love is Just a Season</li><li>10:52 — Jonas</li><li>19:31 — Steer</li><li>30:33 — Long Distance Runner</li><li>34:05 — Brush Your Teeth</li><li>38:50 — Let it Fall </li></ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Dalton-Moon--Aug--28--2024-Acoustic-Set-e35mtuj",
+      "author": "Mellow Max",
+      "published": 1753099200000,
+      "created": 1753099200000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/105657747/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-6-18%2F404114029-44100-2-f476adce6bdf1.m4a",
+          "length": "43323281",
+          "type": "audio/x-m4a"
+        }
+      ],
+      "itunes_summary": "<p>Check out this interview with and acoustic performance by the one, the only: <a href=\"https://daltonmoon.bandcamp.com/\" target=\"_blank\" rel=\"noopener noreferer\">Dalton Moon</a>! This Worcester-based band, named for their lead singer (and two-time guest on Highly Recommended!), plays rock &#39;n roll. Hear some of your favorite Dalton Moon song stripped back to acoustic tracks and recorded live on the air mixed in with some generally silly chats. </p><p>Set List:</p><ul><li>00:00 — Intro</li><li>02:16 — Love is Just a Season</li><li>10:52 — Jonas</li><li>19:31 — Steer</li><li>30:33 — Long Distance Runner</li><li>34:05 — Brush Your Teeth</li><li>38:50 — Let it Fall </li></ul>",
+      "itunes_duration": "00:44:38",
+      "itunes_season": 1,
+      "itunes_episode": 41,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1752804253973-5846e55f1374e.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "bb32c2c1-eeab-4560-b642-b9d60cc9e9b4",
+      "title": "tongue love — Aug. 21, 2024",
+      "description": "<p>August 21, 2024 was a fantastic radio show with three big guests: an interview with <a href=\"https://www.instagram.com/justmainera/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Main Era</a>, an acoustic performance by <a href=\"https://www.instagram.com/sophiewhitingmusic/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Sophie Whiting</a> featuring Chase Allardice, and last but certainly not least, <a href=\"https://www.instagram.com/tonguelovetunes/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">tongue love</a> with a live full band performance in our very own Studio Dee at WMFO. After their performance, I got to have this interview with them! Listen back, check out their new releases since this came out, and keep an eye out for upcoming gigs!</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/tongue-love--Aug--21--2024-e35gki2",
+      "author": "Mellow Max",
+      "published": 1752667200000,
+      "created": 1752667200000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/105451522/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-6-13%2F403850701-44100-2-df022911ad4da.m4a",
+          "length": "23902007",
+          "type": "audio/x-m4a"
+        }
+      ],
+      "itunes_summary": "<p>August 21, 2024 was a fantastic radio show with three big guests: an interview with <a href=\"https://www.instagram.com/justmainera/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Main Era</a>, an acoustic performance by <a href=\"https://www.instagram.com/sophiewhitingmusic/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Sophie Whiting</a> featuring Chase Allardice, and last but certainly not least, <a href=\"https://www.instagram.com/tonguelovetunes/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">tongue love</a> with a live full band performance in our very own Studio Dee at WMFO. After their performance, I got to have this interview with them! Listen back, check out their new releases since this came out, and keep an eye out for upcoming gigs!</p>",
+      "itunes_duration": "00:24:37",
+      "itunes_season": 1,
+      "itunes_episode": 40,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1752667766791-b5bab37a83d45.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "7df3f568-91e7-49b7-af10-ce3d22e582cd",
+      "title": "Sophie Whiting — Aug. 21, 2024 (Acoustic Set)",
+      "description": "<p>I'm thrilled to break my podcast hiatus with this acoustic session and interview with <a href=\"https://www.instagram.com/sophiewhitingmusic/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Sophie Whiting</a>, featuring accompaniment from <a href=\"https://www.instagram.com/chase_allardice/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Chase Allardice</a>. I hope that you enjoy our chat and Sophie and Chase's beautiful music. </p><p><br /></p><p>Set List:</p><ul><li>00:00 — Intro</li><li>01:30 — Still Here</li><li>03:50 — Too Late Now</li><li>09:57 — Tashi's Lullabye</li><li>18:15 — Pages of You</li><li>22:47 — Gone</li><li>28:42 — Outskirts</li><li>32:45 — Wish I Was a Single Girl Again</li><li>36:09 — How I Lost My Lover in the War</li></ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Sophie-Whiting--Aug--21--2024-Acoustic-Set-e35gjus",
+      "author": "Mellow Max",
+      "published": 1752443466000,
+      "created": 1752443466000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/105450908/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-6-13%2F403849951-44100-2-a23ef19bdcb4d.m4a",
+          "length": "41296680",
+          "type": "audio/x-m4a"
+        }
+      ],
+      "itunes_summary": "<p>I'm thrilled to break my podcast hiatus with this acoustic session and interview with <a href=\"https://www.instagram.com/sophiewhitingmusic/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Sophie Whiting</a>, featuring accompaniment from <a href=\"https://www.instagram.com/chase_allardice/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Chase Allardice</a>. I hope that you enjoy our chat and Sophie and Chase's beautiful music. </p><p><br /></p><p>Set List:</p><ul><li>00:00 — Intro</li><li>01:30 — Still Here</li><li>03:50 — Too Late Now</li><li>09:57 — Tashi's Lullabye</li><li>18:15 — Pages of You</li><li>22:47 — Gone</li><li>28:42 — Outskirts</li><li>32:45 — Wish I Was a Single Girl Again</li><li>36:09 — How I Lost My Lover in the War</li></ul>",
+      "itunes_duration": "00:42:33",
+      "itunes_season": 1,
+      "itunes_episode": 35,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1752444846377-832f13980fe64.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "152e3d0d-7c45-4550-9627-673b14627487",
+      "title": "Main Era — Aug. 21, 2024",
+      "description": "<p>Enjoy my interview with Boston music scene greats, <a href=\"https://maineraband.github.io/index.html\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Main Era</a>, as we discuss their new album, <a href=\"https://open.spotify.com/album/4ADYTqyDFDGCu3EIo3fPv1\" rel=\"ugc noopener noreferrer\" target=\"_blank\">AC130</a>. This was a really fun interview and I am very excited to have it online!\n\n</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Main-Era--Aug--21--2024-e2rmcub",
+      "author": "Mellow Max",
+      "published": 1732943288000,
+      "created": 1732943288000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95154571/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-30%2Fdc6aebc7-8890-0e4d-25c4-dd4ac76c3892.mp3",
+          "length": "51055128",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Enjoy my interview with Boston music scene greats, <a href=\"https://maineraband.github.io/index.html\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Main Era</a>, as we discuss their new album, <a href=\"https://open.spotify.com/album/4ADYTqyDFDGCu3EIo3fPv1\" rel=\"ugc noopener noreferrer\" target=\"_blank\">AC130</a>. This was a really fun interview and I am very excited to have it online!\n\n</p>",
+      "itunes_duration": "00:50:32",
+      "itunes_season": 1,
+      "itunes_episode": 34,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732943136774-3c42fb7b7d7bc.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "76401479-4af0-4838-8bb7-48fd27df7768",
+      "title": "Julia Dasey — Aug. 14, 2024 (Acoustic Set)",
+      "description": "<p>Wow! I don't want to toot my own horn (or take any credit for the raw talent of Jules' band!) but this recording came out SO well. I know I am going to be listening to it a lot now that I can stream it easily. <a href=\"https://www.instagram.com/juliadaseyy/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Julia Dasey,</a> and the Jules band as a whole, are fun, talented, and best described as \"Jules\". It is Jules music for Jules people, so give it a listen and enjoy!</p>\n<p>Set List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>04:11 — My Body</li>\n  <li>16:17 — SONG FOR THE SAD PART OF A ROM COM</li>\n  <li>32:40 — CROSS YOUR FINGERS</li>\n  <li>48:04 — CONTROL</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Julia-Dasey--Aug--14--2024-Acoustic-Set-e2rm8np",
+      "author": "Mellow Max",
+      "published": 1732927138000,
+      "created": 1732927138000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95150265/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-30%2F23151545-7db5-a746-6a1d-4683a40c326c.mp3",
+          "length": "63276093",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Wow! I don't want to toot my own horn (or take any credit for the raw talent of Jules' band!) but this recording came out SO well. I know I am going to be listening to it a lot now that I can stream it easily. <a href=\"https://www.instagram.com/juliadaseyy/\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Julia Dasey,</a> and the Jules band as a whole, are fun, talented, and best described as \"Jules\". It is Jules music for Jules people, so give it a listen and enjoy!</p>\n<p>Set List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>04:11 — My Body</li>\n  <li>16:17 — SONG FOR THE SAD PART OF A ROM COM</li>\n  <li>32:40 — CROSS YOUR FINGERS</li>\n  <li>48:04 — CONTROL</li>\n</ul>",
+      "itunes_duration": "00:58:51",
+      "itunes_season": 1,
+      "itunes_episode": 33,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732926807431-895906fe275b8.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "8e4cb333-faea-4864-a2dc-3a53bd357d6c",
+      "title": "Mariposa — Jul. 31, 2024",
+      "description": "<p>Check out my interview with local Boston indie group Mariposa about a week after I saw them at <a href=\"Mariposa!\" target=\"_blank\" rel=\"ugc noopener noreferrer\">this fantastic basement show</a> (captured by dedicated local documentarian <a href=\"https://www.youtube.com/@ospreycorporation\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Osprey Corporation</a>) for their <a href=\"https://open.spotify.com/album/15hXI1I5PIZ9zrgUr6Uq8T\" target=\"_blank\" rel=\"ugc noopener noreferrer\">self-titled debut EP</a>. If you like indie and alternative rock, give 'em a listen!</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Mariposa--Jul--31--2024-e2rm6li",
+      "author": "Mellow Max",
+      "published": 1732920821000,
+      "created": 1732920821000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95148146/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-29%2F36923f09-5b0c-e0fa-fd7d-b866ed89e3da.mp3",
+          "length": "42690672",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Check out my interview with local Boston indie group Mariposa about a week after I saw them at <a href=\"Mariposa!\" target=\"_blank\" rel=\"ugc noopener noreferrer\">this fantastic basement show</a> (captured by dedicated local documentarian <a href=\"https://www.youtube.com/@ospreycorporation\" target=\"_blank\" rel=\"ugc noopener noreferrer\">Osprey Corporation</a>) for their <a href=\"https://open.spotify.com/album/15hXI1I5PIZ9zrgUr6Uq8T\" target=\"_blank\" rel=\"ugc noopener noreferrer\">self-titled debut EP</a>. If you like indie and alternative rock, give 'em a listen!</p>",
+      "itunes_duration": "00:41:07",
+      "itunes_season": 1,
+      "itunes_episode": 32,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732920787554-0d181d73615b2.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "5edf0e5c-2383-4afa-85f6-96f82673f4d4",
+      "title": "Goodway Studios — Jul. 24, 2024",
+      "description": "<p>I love <a href=\"https://www.goodwaystudios.com/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Goodway Studios</a>. When you see Mo and Ian and their helpers wearing Goodway Studios shirts at a show, you know it's going to sound good. Plus, they're the nicest guys around! When I got serious about wriggling my way into Boston's music scene, these two were the first to remember my name and welcome me into the fold. If you're interested in seeing what these guys do and how they do it, check out the <a href=\"https://www.youtube.com/@goodway_studios\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Goodway Studios YouTube channel</a>!</p>\n<p><br /></p>\n<p>I can't include the copyrighted music we played on air but check out our collaborative playlist <a href=\"https://open.spotify.com/playlist/0TtEFnSxLSoqwt69lXPOI0\" rel=\"ugc noopener noreferrer\" target=\"_blank\">WMFO 7/24/24 (Goodway Studios!)</a> to follow along.</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Goodway-Studios--Jul--24--2024-e2rm5nt",
+      "author": "Mellow Max",
+      "published": 1732919327000,
+      "created": 1732919327000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95147197/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-29%2F8dafb4d0-33fd-f09b-0e36-716944bba121.mp3",
+          "length": "71930712",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>I love <a href=\"https://www.goodwaystudios.com/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Goodway Studios</a>. When you see Mo and Ian and their helpers wearing Goodway Studios shirts at a show, you know it's going to sound good. Plus, they're the nicest guys around! When I got serious about wriggling my way into Boston's music scene, these two were the first to remember my name and welcome me into the fold. If you're interested in seeing what these guys do and how they do it, check out the <a href=\"https://www.youtube.com/@goodway_studios\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Goodway Studios YouTube channel</a>!</p>\n<p><br /></p>\n<p>I can't include the copyrighted music we played on air but check out our collaborative playlist <a href=\"https://open.spotify.com/playlist/0TtEFnSxLSoqwt69lXPOI0\" rel=\"ugc noopener noreferrer\" target=\"_blank\">WMFO 7/24/24 (Goodway Studios!)</a> to follow along.</p>",
+      "itunes_duration": "01:05:03",
+      "itunes_season": 1,
+      "itunes_episode": 31,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732919077150-db57c3003a582.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "b0fe2a3f-d34b-426b-a6c5-91e605ed50a4",
+      "title": "TELL — Jul. 17, 2024",
+      "description": "<p>Check out my interview with Boston musical veterans David Wildman and Jim Foster from <a href=\"https://telltheband.com/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">TELL</a> after their performance on WMFO's longest running local music show, On the Town with Mikey Dee. It was a pleasure hearing their perspective on today's Boston scene!</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/TELL--Jul--17--2024-e2rm4ob",
+      "author": "Mellow Max",
+      "published": 1732916282000,
+      "created": 1732916282000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95146187/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-29%2Fcbc913fc-1885-48b9-c62f-ed37d365c2db.mp3",
+          "length": "23240832",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Check out my interview with Boston musical veterans David Wildman and Jim Foster from <a href=\"https://telltheband.com/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">TELL</a> after their performance on WMFO's longest running local music show, On the Town with Mikey Dee. It was a pleasure hearing their perspective on today's Boston scene!</p>",
+      "itunes_duration": "00:22:25",
+      "itunes_season": 1,
+      "itunes_episode": 30,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732916195944-19f4a3e480954.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "dcc1ae4a-33ec-4ced-8fbc-19cc6b47ebbb",
+      "title": "The Infinite Wet Secret — Jul. 10, 2024",
+      "description": "<p>It's not unusual for me to get really excited about local bands. Maybe there's something in the water, maybe Boston has a really incredible crop of musicians and a less-than-perfect-but-nonetheless-functional underground music scene, or maybe it's like how local produce just tastes better... But I think that <a href=\"https://linktr.ee/theinfinitewetsecret\" rel=\"ugc noopener noreferrer\" target=\"_blank\">The Infinite Wet Secret</a> is one of the most exciting new bands in the Boston music scene. They pull in surf rock, psych, prog, and a dozen other genres into one infinite and wet secret... Keep an eye out for upcoming gigs and <a href=\"https://open.spotify.com/artist/75mPPbi6Noe6BMBvEZlxN7?\" rel=\"ugc noopener noreferrer\" target=\"_blank\">give them a listen</a>!</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/The-Infinite-Wet-Secret--Jul--10--2024-e2rm481",
+      "author": "Mellow Max",
+      "published": 1732915698000,
+      "created": 1732915698000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95145665/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-29%2Fa475bb67-1c95-e9fb-f50c-7761e1cd55da.mp3",
+          "length": "49447104",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>It's not unusual for me to get really excited about local bands. Maybe there's something in the water, maybe Boston has a really incredible crop of musicians and a less-than-perfect-but-nonetheless-functional underground music scene, or maybe it's like how local produce just tastes better... But I think that <a href=\"https://linktr.ee/theinfinitewetsecret\" rel=\"ugc noopener noreferrer\" target=\"_blank\">The Infinite Wet Secret</a> is one of the most exciting new bands in the Boston music scene. They pull in surf rock, psych, prog, and a dozen other genres into one infinite and wet secret... Keep an eye out for upcoming gigs and <a href=\"https://open.spotify.com/artist/75mPPbi6Noe6BMBvEZlxN7?\" rel=\"ugc noopener noreferrer\" target=\"_blank\">give them a listen</a>!</p>",
+      "itunes_duration": "00:49:59",
+      "itunes_season": 1,
+      "itunes_episode": 29,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732915555085-d204415d2b646.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "d5b69f74-9b0c-4eda-b181-af8a674cfa7d",
+      "title": "Makeout Palace — Jul. 03, 2024",
+      "description": "<p>Check out my interview with the iconic Boston indie rockers, <a href=\"https://www.makeoutpalace.com/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Makeout Palace</a>! I know these folks from their raucous underground shows around Boston's music scene and it was a pleasure having them in the studio to chat with me before their performance on On the Town with Mikey Dee!</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Makeout-Palace--Jul--03--2024-e2rm3sv",
+      "author": "Mellow Max",
+      "published": 1732914771000,
+      "created": 1732914771000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95145311/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-29%2F2e69e879-64ab-ff74-def5-013273639cf8.mp3",
+          "length": "36339096",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Check out my interview with the iconic Boston indie rockers, <a href=\"https://www.makeoutpalace.com/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Makeout Palace</a>! I know these folks from their raucous underground shows around Boston's music scene and it was a pleasure having them in the studio to chat with me before their performance on On the Town with Mikey Dee!</p>",
+      "itunes_duration": "00:34:50",
+      "itunes_season": 1,
+      "itunes_episode": 28,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732914647656-be06c2249148f.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "3c7162c6-5426-4a9a-a651-087ada0245e0",
+      "title": "Jared Goldman — Jul. 03, 2024 (Acoustic Set)",
+      "description": "<p>Sorry for the long uploading hiatus! Here's my interview with and acoustic set by <a href=\"https://www.instagram.com/jaredg0ldm0n/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Jared Goldman</a> of the bands <a href=\"https://www.instagram.com/thebandfurthernotice/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Further Notice</a> and <a href=\"https://www.instagram.com/bird__alert/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Bird Alert</a>. When he's not working on his own music, Jared brings local music to the people with <a href=\"https://www.instagram.com/camberville_music\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Camberville Music</a>!</p>\n\n\n<br />\n<p>Set List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>01:42 — Your Love</li>\n <li>06:40 — Doggone Blues</li>\n <li>10:00 — Long Walk</li>\n <li>13:45 — Basically Strangers</li>\n <li>18:13 — I-40 Line</li>\n <li>27:13 — Jill's Song</li>\n <li>31:04 — Kick it</li>\n <li>35:00 — Without You</li>\n <li>39:41 — Joanna</li>\n <li>43:00 — Like Dew</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Jared-Goldman--Jul--03--2024-Acoustic-Set-e2rm38e",
+      "author": "Mellow Max",
+      "published": 1732914289000,
+      "created": 1732914289000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/95144654/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-10-29%2F6f05c720-23c4-dc65-32c6-895d486c832d.mp3",
+          "length": "47341920",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Sorry for the long uploading hiatus! Here's my interview with and acoustic set by <a href=\"https://www.instagram.com/jaredg0ldm0n/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Jared Goldman</a> of the bands <a href=\"https://www.instagram.com/thebandfurthernotice/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Further Notice</a> and <a href=\"https://www.instagram.com/bird__alert/\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Bird Alert</a>. When he's not working on his own music, Jared brings local music to the people with <a href=\"https://www.instagram.com/camberville_music\" rel=\"ugc noopener noreferrer\" target=\"_blank\">Camberville Music</a>!</p>\n\n\n<br />\n<p>Set List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>01:42 — Your Love</li>\n <li>06:40 — Doggone Blues</li>\n <li>10:00 — Long Walk</li>\n <li>13:45 — Basically Strangers</li>\n <li>18:13 — I-40 Line</li>\n <li>27:13 — Jill's Song</li>\n <li>31:04 — Kick it</li>\n <li>35:00 — Without You</li>\n <li>39:41 — Joanna</li>\n <li>43:00 — Like Dew</li>\n</ul>",
+      "itunes_duration": "00:45:57",
+      "itunes_season": 1,
+      "itunes_episode": 27,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1732914210165-8b342f9e07dd2.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "fba22e51-cb45-490c-9fcc-6b891fac192b",
+      "title": "The Nut — Jun. 26, 2024 (Acoustic Set)",
+      "description": "<p>Listen to <a href=\"https://open.spotify.com/artist/3DDfeCOypu2duCZOsmc0YM?si=msOtX7FtQZquYSub86nYZg\">The Nut&#39;s</a> radio debut on <a href=\"https://mellowmaxradio.com\">Highly Recommended</a> on <a href=\"https://wmfo.org\">WMFO</a> Tufts&#39; freeform radio station. I&#39;ve been very excited to release this session. I hope that you enjoy this interview and acoustic performance from local singer songwriter Liz Meier as much as I did back in June (or as much as I&#39;m enjoying it as I write this)!</p>\n\n<br>\n<p>Set List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>03:07 — Agnes</li>\n <li>05:38 — Half Awake</li>\n <li>15:46 — Tectonic</li>\n <li>28:10 — Anodyne</li>\n <li>38:33 — Kingpin</li>\n <li>47:55 — Angel Wings</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/The-Nut--Jun--26--2024-Acoustic-Set-e2no8ps",
+      "author": "Mellow Max",
+      "published": 1724903665000,
+      "created": 1724903665000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/91021564/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-7-29%2F66e58e06-51b1-9e15-9d01-300879cdeb2d.mp3",
+          "length": "60322221",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Listen to <a href=\"https://open.spotify.com/artist/3DDfeCOypu2duCZOsmc0YM?si=msOtX7FtQZquYSub86nYZg\">The Nut&#39;s</a> radio debut on <a href=\"https://mellowmaxradio.com\">Highly Recommended</a> on <a href=\"https://wmfo.org\">WMFO</a> Tufts&#39; freeform radio station. I&#39;ve been very excited to release this session. I hope that you enjoy this interview and acoustic performance from local singer songwriter Liz Meier as much as I did back in June (or as much as I&#39;m enjoying it as I write this)!</p>\n\n<br>\n<p>Set List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>03:07 — Agnes</li>\n <li>05:38 — Half Awake</li>\n <li>15:46 — Tectonic</li>\n <li>28:10 — Anodyne</li>\n <li>38:33 — Kingpin</li>\n <li>47:55 — Angel Wings</li>\n</ul>",
+      "itunes_duration": "00:55:49",
+      "itunes_season": 1,
+      "itunes_episode": 26,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1724903566704-2966369cd1a0c.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "a381bb99-14d3-43b2-898a-ab4e6adff2eb",
+      "title": "Almira Ara — Jun. 19, 2024 (Acoustic Set)",
+      "description": "<p>Last but certainly not least, Almira Ara wraps up our local acoustic musician mini-series on the hottest night of 2024 here in Boston. Although, I was already fading by my fifth hour on air, Almira&#39;s beautiful mix of rock, R&amp;B, and folk energized me for one more hour of lovely local music.<br>\nSet List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>01:57 — Lost / Found</li>\n <li>11:25 — Object Permanence</li>\n <li>17:32 — Child of Our Time</li>\n <li>26:15 — Talkin' About a Revolution</li>\n <li>33:45 — Little Black Girl Radiating Light</li>\n <li>45:33 — 444ever</li>\n <li>49:35 — Love Like Yours</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Almira-Ara--Jun--19--2024-Acoustic-Set-e2nire0",
+      "author": "Mellow Max",
+      "published": 1724543501000,
+      "created": 1724543501000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/90844032/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-7-24%2F7b59ae31-500d-b7dc-3b44-53853c9318f4.mp3",
+          "length": "59767536",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Last but certainly not least, Almira Ara wraps up our local acoustic musician mini-series on the hottest night of 2024 here in Boston. Although, I was already fading by my fifth hour on air, Almira&#39;s beautiful mix of rock, R&amp;B, and folk energized me for one more hour of lovely local music.<br>\nSet List:</p>\n<ul>\n <li>00:00 — Intro</li>\n <li>01:57 — Lost / Found</li>\n <li>11:25 — Object Permanence</li>\n <li>17:32 — Child of Our Time</li>\n <li>26:15 — Talkin' About a Revolution</li>\n <li>33:45 — Little Black Girl Radiating Light</li>\n <li>45:33 — 444ever</li>\n <li>49:35 — Love Like Yours</li>\n</ul>",
+      "itunes_duration": "00:55:44",
+      "itunes_season": 1,
+      "itunes_episode": 25,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1724541353846-f44b363e2cd8e.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "ad775620-bccd-436d-8fc3-c351242028de",
+      "title": "Talia Rose — Jun. 19, 2024 (Acoustic Set)",
+      "description": "<p>Carrying on the three artist acoustic series on the hottest day of the summer, Boston based singer/songwriter Talia Rose was a breath of fresh air in the very warm studio at WMFO. <br>\nSet List:</p>\n<ul>\n <li>00:00 — How Could I Go</li>\n <li>08:07 — Columbus, Ohio</li>\n <li>14:55 — Can You Believe</li>\n <li>21:46 — Scrape Her Knees</li>\n  <li>29:13 — In August</li>\n  <li>33:59 — Painted Green</li>\n  <li>40:05 — Lexapro Lover</li>\n  <li>46:27 — Anyone Can Be A Gardener</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Talia-Rose--Jun--19--2024-Acoustic-Set-e2mjr61",
+      "author": "Mellow Max",
+      "published": 1722303170000,
+      "created": 1722303170000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/89827969/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-6-30%2Ff6a0c3dc-4da5-de5d-41f0-24e8ce44b303.mp3",
+          "length": "54704760",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Carrying on the three artist acoustic series on the hottest day of the summer, Boston based singer/songwriter Talia Rose was a breath of fresh air in the very warm studio at WMFO. <br>\nSet List:</p>\n<ul>\n <li>00:00 — How Could I Go</li>\n <li>08:07 — Columbus, Ohio</li>\n <li>14:55 — Can You Believe</li>\n <li>21:46 — Scrape Her Knees</li>\n  <li>29:13 — In August</li>\n  <li>33:59 — Painted Green</li>\n  <li>40:05 — Lexapro Lover</li>\n  <li>46:27 — Anyone Can Be A Gardener</li>\n</ul>",
+      "itunes_duration": "00:53:00",
+      "itunes_season": 1,
+      "itunes_episode": 24,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1722303026254-1f7570ebdcd24.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "70e95a15-dac1-433a-92dc-e039f9fefb0f",
+      "title": "Amanda Leifer — Jun. 19, 2024 (Acoustic Set)",
+      "description": "<p>With a ridiculous heat index of 108°F, Amanda Leifer, of KovaTova, didn&#39;t need to bring the heat with this acoustic performance... But I certainly wasn&#39;t going to stop her! Amanda powered through the heat wave and gave us one hell of a performance from Studio A at WMFO in Medford. \n<br>\nSet List:</p>\n<ul>\n <li>00:00 — Introductions </li>\n <li>01:08 — I&#39;ll Be Yours If You&#39;ll Be Mine</li>\n  <li>05:19 — Ovi&#39;s Tune</li>\n  <li>16:34 — Tomato Soup</li>\n  <li>20:54 — Growing Up</li>\n  <li>32:57 — Overthink</li>\n  <li>38:46 — Bike Lane</li>\n  <li>44:37 — Give Me Your Attention</li>\n  <li>48:29 — You Can Give Me Away</li>\n  <li>54:02 — Perspective</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Amanda-Leifer--Jun--19--2024-Acoustic-Set-e2lqk67",
+      "author": "Mellow Max",
+      "published": 1720713600000,
+      "created": 1720713600000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/89001607/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-6-9%2F40506b32-ba71-9033-8155-e6b4b9dd9d33.mp3",
+          "length": "62918371",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>With a ridiculous heat index of 108°F, Amanda Leifer, of KovaTova, didn&#39;t need to bring the heat with this acoustic performance... But I certainly wasn&#39;t going to stop her! Amanda powered through the heat wave and gave us one hell of a performance from Studio A at WMFO in Medford. \n<br>\nSet List:</p>\n<ul>\n <li>00:00 — Introductions </li>\n <li>01:08 — I&#39;ll Be Yours If You&#39;ll Be Mine</li>\n  <li>05:19 — Ovi&#39;s Tune</li>\n  <li>16:34 — Tomato Soup</li>\n  <li>20:54 — Growing Up</li>\n  <li>32:57 — Overthink</li>\n  <li>38:46 — Bike Lane</li>\n  <li>44:37 — Give Me Your Attention</li>\n  <li>48:29 — You Can Give Me Away</li>\n  <li>54:02 — Perspective</li>\n</ul>",
+      "itunes_duration": "00:58:07",
+      "itunes_season": 1,
+      "itunes_episode": 23,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1720503132643-425d4a814e3db.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "2082ca4f-4e4d-490e-9e2c-b86038bcfba9",
+      "title": "Bermuda Search Party — May 15, 2024",
+      "description": "<p>Catch my interview with Leo, Clair, Hoyt, Macklan, and Steven of Bermuda Search Party after their live studio session on On the Town with Mikey Dee right here on 91.5FM WMFO in Medford. </p>\n<p><br></p>\n<p>We&#39;ve got jokes, we&#39;ve got a car accident, we&#39;ve got sound effects, fun facts, a Transformers headcanon, and lots and lots of laughs!</p>\n<p><br></p>\n<p>THIS IS THE LAST EPISODE WITH SQUEAKY CHAIRS! THANK YOU TO MACKLAN/HOYT FOR THE VALVE OIL, IT HAS BEEN INCREDIBLE!!!</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Bermuda-Search-Party--May-15--2024-e2l57rr",
+      "author": "Mellow Max",
+      "published": 1718980383000,
+      "created": 1718980383000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/88300859/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-5-21%2F8df11319-deb1-5e63-374d-5deb92122adb.mp3",
+          "length": "28849752",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Catch my interview with Leo, Clair, Hoyt, Macklan, and Steven of Bermuda Search Party after their live studio session on On the Town with Mikey Dee right here on 91.5FM WMFO in Medford. </p>\n<p><br></p>\n<p>We&#39;ve got jokes, we&#39;ve got a car accident, we&#39;ve got sound effects, fun facts, a Transformers headcanon, and lots and lots of laughs!</p>\n<p><br></p>\n<p>THIS IS THE LAST EPISODE WITH SQUEAKY CHAIRS! THANK YOU TO MACKLAN/HOYT FOR THE VALVE OIL, IT HAS BEEN INCREDIBLE!!!</p>",
+      "itunes_duration": "00:35:45",
+      "itunes_season": 1,
+      "itunes_episode": 21,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1718979796662-53a79bd721ff6.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "68eb4905-07a9-4291-a7b7-d7faf009f397",
+      "title": "Hereboy — May 15, 2024 (Acoustic Set)",
+      "description": "<p>On this episode of Highly Recommended, \nSarah (Sarge) Gyurina of <a href=\"https://www.instagram.com/hereboy.mp3/\">Hereboy</a>, joins me in the WMFO studio for an acoustic session and interview. Sit back, relax, and bask in the warm glow of her vocals and guitar-work. It was a pleasure having her in the studio! (P.S. this is the second to last interview with squeaky chairs!!!! I promise!)</p>\n<p><br></p>\n<p>Set List:</p>\n<ul>\n <li>00:20 — Generous</li>\n <li>10:10 — What you Want</li>\n  <li>12:45 — For Granted</li>\n  <li>21:31 — Chosen One </li>\n  <li>24:35 — Swim Lessons </li>\n  <li>48:28 — Pick Up the Phone</li>\n  <li>51:57 — moonblue</li>\n  <li>55:34 — The Way I Always Do</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Hereboy--May-15--2024-Acoustic-Set-e2kmmsp",
+      "author": "Mellow Max",
+      "published": 1717981481000,
+      "created": 1717981481000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/87824729/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-5-10%2F60fd3c70-4cd9-b37e-67a6-73aaafc953b2.mp3",
+          "length": "46579989",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>On this episode of Highly Recommended, \nSarah (Sarge) Gyurina of <a href=\"https://www.instagram.com/hereboy.mp3/\">Hereboy</a>, joins me in the WMFO studio for an acoustic session and interview. Sit back, relax, and bask in the warm glow of her vocals and guitar-work. It was a pleasure having her in the studio! (P.S. this is the second to last interview with squeaky chairs!!!! I promise!)</p>\n<p><br></p>\n<p>Set List:</p>\n<ul>\n <li>00:20 — Generous</li>\n <li>10:10 — What you Want</li>\n  <li>12:45 — For Granted</li>\n  <li>21:31 — Chosen One </li>\n  <li>24:35 — Swim Lessons </li>\n  <li>48:28 — Pick Up the Phone</li>\n  <li>51:57 — moonblue</li>\n  <li>55:34 — The Way I Always Do</li>\n</ul>",
+      "itunes_duration": "01:00:09",
+      "itunes_season": 1,
+      "itunes_episode": 20,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1717981429104-591c541474203.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "dbaa83ab-2e0b-4f4b-b042-7ecb5685ca20",
+      "title": "Levitation Room — May 13, 2024",
+      "description": "<p>Join me and the members of Levitation Room for a wild ride of a conversation! After an incredible performance at The Rockwell in Davis Square, the guys from Levitation Room agreed to meet me at the radio station and here&#39;s the result. I hope you also enjoy our antics!</p>\n<p>(PS I&#39;ve since fixed the squeaky chairs... Sorry!)</p>\n<p>The songs we listened to:</p>\n<ul>\n <li>levitation room -- Heaven</li>\n <li>Slaughter &amp; The Dogs -- Boston Babies</li>\n  <li>NRBQ -- Magnet</li>\n  <li>Dwight Twilley Band -- Looking for the Magic</li>\n  <li>Hether -- Pinkg Purple Blues</li>\n  <li>Pastor T.L. Barrett and The Youth for Christ Choir -- Like a Ship</li>\n  <li>Gil Scott-Heron -- Home is Where the Hatred Is</li>\n  <li>The Cleaners from Venus -- The Mercury Girl</li>\n  <li>levitation room -- friends</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Levitation-Room--May-13--2024-e2k9b8a",
+      "author": "Mellow Max",
+      "published": 1717084800000,
+      "created": 1717084800000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/87386826/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-4-30%2F0f8a6aa0-c181-3a23-7f94-777767774df0.mp3",
+          "length": "96666408",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Join me and the members of Levitation Room for a wild ride of a conversation! After an incredible performance at The Rockwell in Davis Square, the guys from Levitation Room agreed to meet me at the radio station and here&#39;s the result. I hope you also enjoy our antics!</p>\n<p>(PS I&#39;ve since fixed the squeaky chairs... Sorry!)</p>\n<p>The songs we listened to:</p>\n<ul>\n <li>levitation room -- Heaven</li>\n <li>Slaughter &amp; The Dogs -- Boston Babies</li>\n  <li>NRBQ -- Magnet</li>\n  <li>Dwight Twilley Band -- Looking for the Magic</li>\n  <li>Hether -- Pinkg Purple Blues</li>\n  <li>Pastor T.L. Barrett and The Youth for Christ Choir -- Like a Ship</li>\n  <li>Gil Scott-Heron -- Home is Where the Hatred Is</li>\n  <li>The Cleaners from Venus -- The Mercury Girl</li>\n  <li>levitation room -- friends</li>\n</ul>",
+      "itunes_explicit": true,
+      "itunes_duration": "01:54:08",
+      "itunes_season": 1,
+      "itunes_episode": 19,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1717036499081-e6d6e5a41d1df.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "dfb750f0-c0ec-4317-b9b5-40848700395b",
+      "title": "Anna Reidister — May 01, 2024 (Acoustic Set)",
+      "description": "<p>Listen to Anna Reidister (AKA <a href=\"https://open.spotify.com/artist/4NFOMYcYkP0xtHUNkdMHKT?si=ql9cEiRITTC3tWGjgrLNDg\">Nemarca</a>) of <a href=\"https://open.spotify.com/artist/0jmZoy7zh9lTAFqiJQLJD0?si=NnjALJh2TleT4Quke9MN4A\">The Croaks</a> play an acoustic set on WMFO&#39;s Highly Recommended. It was a lot of fun hanging out and chatting about music, words, trees, and beyond! This episode is ossum (awesome) as in possum. (P.S. I&#39;ve fixed the squeaky chairs... so sorry!)</p>\n<p><br></p>\n<p>Set List:</p>\n<ul>\n <li>00:24 — Sleeping Giant</li>\n <li>08:46 — Little Yellow Pill</li>\n <li>15:19 — Cuttyhunk Isle</li>\n <li>19:10 — Odor</li>\n <li>22:30 — Cat</li>\n <li>27:40 — Rainbow Trout</li>\n <li>36:57 — One One One</li>\n <li>40:04 — Tighten to Untangle</li>\n  <li>44:40 — Hog Song</li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Anna-Reidister--May-01--2024-Acoustic-Set-e2k50g5",
+      "author": "Mellow Max",
+      "published": 1716912000000,
+      "created": 1716912000000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/87244741/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-4-27%2F34e4fd73-eb58-7af6-74a0-67d0c998e201.mp3",
+          "length": "41712384",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Listen to Anna Reidister (AKA <a href=\"https://open.spotify.com/artist/4NFOMYcYkP0xtHUNkdMHKT?si=ql9cEiRITTC3tWGjgrLNDg\">Nemarca</a>) of <a href=\"https://open.spotify.com/artist/0jmZoy7zh9lTAFqiJQLJD0?si=NnjALJh2TleT4Quke9MN4A\">The Croaks</a> play an acoustic set on WMFO&#39;s Highly Recommended. It was a lot of fun hanging out and chatting about music, words, trees, and beyond! This episode is ossum (awesome) as in possum. (P.S. I&#39;ve fixed the squeaky chairs... so sorry!)</p>\n<p><br></p>\n<p>Set List:</p>\n<ul>\n <li>00:24 — Sleeping Giant</li>\n <li>08:46 — Little Yellow Pill</li>\n <li>15:19 — Cuttyhunk Isle</li>\n <li>19:10 — Odor</li>\n <li>22:30 — Cat</li>\n <li>27:40 — Rainbow Trout</li>\n <li>36:57 — One One One</li>\n <li>40:04 — Tighten to Untangle</li>\n  <li>44:40 — Hog Song</li>\n</ul>",
+      "itunes_duration": "00:54:04",
+      "itunes_season": 1,
+      "itunes_episode": 18,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1716776103966-a263acd1996ee.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "e1730f5b-3778-4d66-baa3-db0f270dfb69",
+      "title": "Winkler — Apr. 17, 2024",
+      "description": "<p>Check out my interview with one of my favorite local groups: <a href=\"https://open.spotify.com/artist/0qvnx7NpJ5Ly1g2e9EuQyM?si=n0sPZsD_R-yYX8sDEPFU_A\">Winkler</a>! This interview was conducted right after their live radio session on On the Town with Mikey Dee at WMFO, Tufts&#39; freeform radio station. </p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Winkler--Apr--17--2024-e2k4qit",
+      "author": "Mellow Max",
+      "published": 1716761781000,
+      "created": 1716761781000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/87238685/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-4-26%2F2ab5b312-668d-fe33-b0c0-5bdb75d71815.mp3",
+          "length": "30534984",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>Check out my interview with one of my favorite local groups: <a href=\"https://open.spotify.com/artist/0qvnx7NpJ5Ly1g2e9EuQyM?si=n0sPZsD_R-yYX8sDEPFU_A\">Winkler</a>! This interview was conducted right after their live radio session on On the Town with Mikey Dee at WMFO, Tufts&#39; freeform radio station. </p>",
+      "itunes_duration": "00:38:19",
+      "itunes_season": 1,
+      "itunes_episode": 16,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1716761702986-8b722047a58d5.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "9201d305-b0a1-418a-8e67-87bcf36b4061",
+      "title": "Edward Glen — Mar. 27, 2024",
+      "description": "<p>In the second half of my March 27 double header, <a href=\"https://edwardglen.com/\">Edward Glen</a> joins me for a quick interview before their live performance on <a href=\"https://www.facebook.com/OTTwMD/\">On the Town with Mikey Dee</a>.</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Edward-Glen--Mar--27--2024-e2i0dgl",
+      "author": "Mellow Max",
+      "published": 1712285529000,
+      "created": 1712285529000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/84997077/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-3-5%2F4e27909e-9bbb-02e4-5f90-226a65f2b0ea.mp3",
+          "length": "22259256",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>In the second half of my March 27 double header, <a href=\"https://edwardglen.com/\">Edward Glen</a> joins me for a quick interview before their live performance on <a href=\"https://www.facebook.com/OTTwMD/\">On the Town with Mikey Dee</a>.</p>",
+      "itunes_duration": "00:27:00",
+      "itunes_season": 1,
+      "itunes_episode": 13,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/40301574/40301574-1705380065533-4f1667a9ed6e6.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "8c43015f-0af4-47b8-9d59-ae7f7d5fcc57",
+      "title": "Lex Walton — Mar. 27, 2024 (Acoustic Set)",
+      "description": "<p>An interview and solo acoustic set with Boston, MA local musician <a href=\"https://youthagainstsatan.com/\" target=\"_blank\" rel=\"noopener noreferer\">Lex Walton</a>!</p>\n<p><br></p>\n<p>Set list:</p>\n<ul>\n <li>3:32 — Preteen On Omegle Blues</li>\n <li>10:20 — Jenny Hero Cop&#39;s Lament</li>\n <li>14:53 — Why Do Girls Not Like Me?</li>\n <li>24:16 — Sort of Girlfriend</li>\n  <li>38:53 — Song  </li>\n  <li>41:35 — Don&#39;t Play Cards with Satan</li>\n  <li>55:05 — Salvation Attempt #39</li>\n  <li>56:17 — A Brief Chronicling of Extremely Good Ideas </li>\n</ul>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Lex-Walton--Mar--27--2024-Acoustic-Set-e2huusg",
+      "author": "Mellow Max",
+      "published": 1712205167000,
+      "created": 1712205167000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/84949328/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-3-4%2Fe2e7bd21-a2a0-c4af-755a-be3d259905ff.mp3",
+          "length": "56937816",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>An interview and solo acoustic set with Boston, MA local musician <a href=\"https://youthagainstsatan.com/\" target=\"_blank\" rel=\"noopener noreferer\">Lex Walton</a>!</p>\n<p><br></p>\n<p>Set list:</p>\n<ul>\n <li>3:32 — Preteen On Omegle Blues</li>\n <li>10:20 — Jenny Hero Cop&#39;s Lament</li>\n <li>14:53 — Why Do Girls Not Like Me?</li>\n <li>24:16 — Sort of Girlfriend</li>\n  <li>38:53 — Song  </li>\n  <li>41:35 — Don&#39;t Play Cards with Satan</li>\n  <li>55:05 — Salvation Attempt #39</li>\n  <li>56:17 — A Brief Chronicling of Extremely Good Ideas </li>\n</ul>",
+      "itunes_duration": "01:09:09",
+      "itunes_season": 1,
+      "itunes_episode": 12,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/40301574/40301574-1705380065533-4f1667a9ed6e6.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "fbb2b0f8-fb15-44a3-94a1-08a6b1a195f2",
+      "title": "Real Gone — Mar. 20, 2024",
+      "description": "<p>This week, join me for a quick interview with <a href=\"https://realgone1.bandcamp.com/\">Real Gone</a>, a Boston, MA based band playing vintage rock &#39;n&#39; roll, rockabilly, and rhythm and blues. This interview was conducted following Real Gone&#39;s live session on On the Town with Mikey Dee.</p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Real-Gone--Mar--20--2024-e2husel",
+      "author": "Mellow Max",
+      "published": 1712200314000,
+      "created": 1712200314000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/84946837/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-3-4%2F6c5282f4-3b20-f04a-0fc1-3b37bd26df28.mp3",
+          "length": "18539712",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>This week, join me for a quick interview with <a href=\"https://realgone1.bandcamp.com/\">Real Gone</a>, a Boston, MA based band playing vintage rock &#39;n&#39; roll, rockabilly, and rhythm and blues. This interview was conducted following Real Gone&#39;s live session on On the Town with Mikey Dee.</p>",
+      "itunes_duration": "00:22:48",
+      "itunes_season": 1,
+      "itunes_episode": 11,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/40301574/40301574-1705380065533-4f1667a9ed6e6.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "5df502a5-9fb6-4847-85e5-ea917d86ed1b",
+      "title": "Trae Sheehan — Mar. 13, 2024 (Acoustic Set)",
+      "description": "<p>This week, I am joined by local-indie-folk-rock-troubadour, Trae Sheehan. If you like acoustic guitar, harmonica, and learning about the fun backstories behind your favorite artists&#39; songs then look no further: this is the podcast episode for you! </p>\n<p><br></p>\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Trae-Sheehan--Mar--13--2024-Acoustic-Set-e2hc3f4",
+      "author": "Mellow Max",
+      "published": 1710990489000,
+      "created": 1710990489000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/84331428/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2024-2-21%2Fb249cf6f-193a-5f84-4277-f6176926285d.mp3",
+          "length": "50230032",
+          "type": "audio/mpeg"
+        }
+      ],
+      "itunes_summary": "<p>This week, I am joined by local-indie-folk-rock-troubadour, Trae Sheehan. If you like acoustic guitar, harmonica, and learning about the fun backstories behind your favorite artists&#39; songs then look no further: this is the podcast episode for you! </p>\n<p><br></p>",
+      "itunes_duration": "00:59:57",
+      "itunes_season": 1,
+      "itunes_episode": 8,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/40301574/40301574-1705380065533-4f1667a9ed6e6.jpg"
+      },
+      "media": {}
+    },
+    {
+      "id": "c18e01c5-497d-456f-a126-ef7d4004d49e",
+      "title": "Amyl and the Sniffers - Oct. 8, 2018",
+      "description": "\n\nAmyl and the Sniffers had just finished their gig at the Middle East Upstairs in Cambridge, MA when I approached them, \"Hey, I have a radio show in a couple of hours... Want to come on for an interview?\" Lead singer Amy Taylor replied, \"Go ask our tour manager, Spike.\" I did and when Spike asked if the band was keen, I assured him, \"Oh yeah, they're keen!\"\nWith Spike's number in my phone, I left the venue feeling star-struck, excited, and just a little jumbled by the mosh pit. About ten minutes later, it hit me that I was going to be interviewing Amyl and the Sniffers in less than two hours!\nThe day before, I was just another Junior at Tufts University... but tonight I was preparing for a live radio interview (my first ever) with legendary Australian punk group, Amyl and the Sniffers!\n",
+      "link": "https://podcasters.spotify.com/pod/show/mellow-max/episodes/Amyl-and-the-Sniffers---Oct--8--2018-e2egifl",
+      "author": "Mellow Max",
+      "published": 1705378098000,
+      "created": 1705378098000,
+      "category": [],
+      "enclosures": [
+        {
+          "url": "https://anchor.fm/s/f0cfe8d8/podcast/play/81332149/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fproduction%2Fexports%2Ff0cfe8d8%2F81332149%2Ff201e8c1b08e83214d54ed10e3f1c869.m4a",
+          "length": "45692823",
+          "type": "audio/x-m4a"
+        }
+      ],
+      "itunes_summary": "Amyl and the Sniffers had just finished their gig at the Middle East Upstairs in Cambridge, MA when I approached them, \"Hey, I have a radio show in a couple of hours... Want to come on for an interview?\" Lead singer Amy Taylor replied, \"Go ask our tour manager, Spike.\" I did and when Spike asked if the band was keen, I assured him, \"Oh yeah, they're keen!\"\nWith Spike's number in my phone, I left the venue feeling star-struck, excited, and just a little jumbled by the mosh pit. About ten minutes later, it hit me that I was going to be interviewing Amyl and the Sniffers in less than two hours!\nThe day before, I was just another Junior at Tufts University... but tonight I was preparing for a live radio interview (my first ever) with legendary Australian punk group, Amyl and the Sniffers!",
+      "itunes_duration": "00:47:05",
+      "itunes_season": 1,
+      "itunes_episode": 1,
+      "itunes_episodeType": "full",
+      "itunes_image": {
+        "href": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/40301574/40301574-1705377444006-af0a9223745b4.jpg"
+      },
+      "media": {}
+    }
+  ]
+}
+</script>
+
+// <script>
+//   const data = JSON.parse(document.getElementById("feed-data").textContent);
+//   console.log(data.items);
+// </script>
+
+<script>
+  async function loadLocalFeed() {
+    try {
+      const data = await JSON.parse(document.getElementById("feed-data").textContent);
+      console.log("Loaded feed:", data);
 
       const board = document.getElementById("board");
 
-      data.items.forEach(item => {
-        let imgUrl = item.enclosure?.link;
+      if (!data.items || data.items.length === 0) {
+        board.innerHTML = "<p>No items found in feed.json</p>";
+        return;
+      }
 
-        // fallback: try <img> inside description
-        if (!imgUrl && item.description) {
-          const match = item.description.match(/<img.*?src="(.*?)"/);
-          if (match) imgUrl = match[1];
+      data.items.forEach(item => {
+        let imgUrl = item.itunes_image?.href;
+        if (!imgUrl && data.image) {
+          imgUrl = data.image;
         }
+
+        console.log("Item:", item.title, "Image:", imgUrl);
 
         if (imgUrl) {
           const div = document.createElement("div");
@@ -82,9 +834,17 @@
           board.appendChild(div);
         }
       });
+    } catch (err) {
+      console.error("Error loading feed.json:", err);
+      document.getElementById("board").innerHTML =
+        "<p style='color:red;'>Could not load feed.json. Check console for details.</p>";
     }
+  }
 
-    loadLocalFeed();
-  </script>
+  loadLocalFeed();
+</script>
+
+
+
 </body>
 </html>

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "image": "https://images.example.com/ig-post-1.jpg",
+    "caption": "Sunset over the harbor 🌅",
+    "link": "https://www.instagram.com/p/XXXXXXXXX1/",
+    "timestamp": "2025-09-28T18:12:00Z"
+  },
+  {
+    "id": "2",
+    "image": "https://images.example.com/ig-post-2.jpg",
+    "caption": "Late night studio session.",
+    "link": "https://www.instagram.com/p/XXXXXXXXX2/",
+    "timestamp": "2025-09-22T08:30:00Z"
+  }
+  /* add as many posts as you want */
+]
